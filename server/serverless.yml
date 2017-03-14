@@ -1,0 +1,33 @@
+# Welcome to Serverless!
+#
+# This file is the main config file for your service.
+# It's very minimal at this point and uses default values.
+# You can always add more config options for more control.
+# We've included some commented out config examples here.
+# Just uncomment any of them to get that config option.
+#
+# For full config options, check the docs:
+#    docs.serverless.com
+#
+# Happy Coding!
+
+service: elm-lambda-auth-boilerplate
+
+custom:
+  stage: "${opt:stage, self:provider.stage}"
+
+provider:
+  name: aws
+  runtime: nodejs4.3
+  profile: your-iam-user
+  region: us-west-2
+  environment: ${file(env.yml):${self:custom.stage}}
+
+functions:
+  oauthcallback:
+    handler: oauth.authCallback
+    events:
+      - http:
+          path: oauth/callback
+          method: get
+

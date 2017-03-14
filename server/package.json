@@ -1,0 +1,8 @@
+{
+  "name": "elm-lambda-auth-boilerplate",
+  "description": "Application Lambda functions",
+  "version": "0.0.1",
+  "dependencies": {
+    "jsonwebtoken": "^7.3.0"
+  }
+}
