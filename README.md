@@ -8,7 +8,8 @@ Please note I'm still new to Elm (feel free to provide feedback or PR's). This i
 to be production code, but shows the feasibility of this approach. I wanted to explore the
 idea of a super low-cost, low traffic application. By hosting the frontend code on S3, that's
 extremely cheap, and then the use of a Lambda function essentially makes the backend free
-(less than 1 million requests per month is free).
+(less than 1 million requests per month is free). This approach can of course also yield nice
+savings for a high traffic application as well.
 
 This sample uses Strava as the OAuth provider.
 
