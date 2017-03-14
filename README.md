@@ -1,8 +1,14 @@
 # Elm Lambda OAuth Boilerplate
 
 This repo is a mono-repo, containing both the frontend and backend code for a basic boilerplate
-that does OAuth for an Elm application, using an AWS Lambda function for the OAuth callback
-handler.
+that does OAuth for an [Elm](http://elm-lang.org/) application, using an
+[AWS Lambda](https://aws.amazon.com/lambda/) function for the OAuth callback handler.
+
+Please note I'm still new to Elm (feel free to provide feedback or PR's). This is not meant
+to be production code, but shows the feasibility of this approach. I wanted to explore the
+idea of a super low-cost, low traffic application. By hosting the frontend code on S3, that's
+extremely cheap, and then the use of a Lambda function essentially makes the backend free
+(less than 1 million requests per month is free).
 
 This sample uses Strava as the OAuth provider.
 
