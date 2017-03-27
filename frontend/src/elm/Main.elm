@@ -106,14 +106,14 @@ update msg model =
 -- CSS can be applied via class names or inline style attrib
 
 
-oauth_redirect_url : String
-oauth_redirect_url =
+oauthRedirectUrl : String
+oauthRedirectUrl =
     "YOUR_LAMBDA_FUNCTIONS_URL_HERE/dev/oauth/callback"
 
 
-strava_oauth_url : String
-strava_oauth_url =
-    "https://www.strava.com/oauth/authorize?client_id=YOUR_STRAVA_CLIENT_ID_HERE&response_type=code&scope=view_private&redirect_uri=" ++ oauth_redirect_url
+stravaOauthUrl : String
+stravaOauthUrl =
+    "https://www.strava.com/oauth/authorize?client_id=YOUR_STRAVA_CLIENT_ID_HERE&response_type=code&scope=view_private&redirect_uri=" ++ oauthRedirectUrl
 
 
 view : Model -> Html Msg
@@ -138,7 +138,7 @@ viewNotLoggedIn : Html Msg
 viewNotLoggedIn =
     div [ class "jumbotron" ]
         [ p [] [ text ("Elm Lambda OAuth Boilerplate") ]
-        , a [ href strava_oauth_url ] [ text "Login with Strava" ]
+        , a [ href stravaOauthUrl ] [ text "Login with Strava" ]
         ]
 
 
